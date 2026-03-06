@@ -1,24 +1,42 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>AI Dubbing Tool</title>
+<title>AI Somali Video Dubbing</title>
 </head>
 
 <body>
-<h1>AI Video Dubbing</h1>
 
-<input type="file" id="videoUpload">
+<h1>AI Video Dubbing (Arabic / English → Somali)</h1>
+
+<input type="file" id="videoUpload" accept="video/*">
 <br><br>
 
-<button onclick="dubVideo()">Start Dubbing</button>
+<button onclick="startDubbing()">Start Dubbing</button>
 
 <p id="status"></p>
 
 <script>
-function dubVideo(){
-document.getElementById("status").innerText =
-"Video waa la upload gareeyay. Dubbing AI waa socotaa...";
+
+function startDubbing(){
+
+let video = document.getElementById("videoUpload").files[0];
+
+if(!video){
+document.getElementById("status").innerText="Fadlan video geli";
+return;
 }
+
+document.getElementById("status").innerText="AI ayaa turjumaya Arabic/English → Somali...";
+
+setTimeout(function(){
+
+document.getElementById("status").innerText="Dubbing waa diyaar (demo).";
+
+},3000);
+
+}
+
 </script>
 
 </body>
