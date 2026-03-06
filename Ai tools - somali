@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Somali AI Tools</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.tool{
+background:#1e293b;
+padding:20px;
+margin:20px auto;
+max-width:400px;
+border-radius:10px;
+}
+
+button{
+padding:10px 20px;
+background:#3b82f6;
+border:none;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+textarea{
+width:90%;
+height:100px;
+margin-top:10px;
+}
+
+input{
+width:90%;
+padding:10px;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🤖 Somali AI Tools</h1>
+<p>AI Video + AI Dubbing + AI Image</p>
+
+<div class="tool">
+
+<h2>🎥 Video Generator</h2>
+
+<input id="videoPrompt" placeholder="Qor waxa aad rabto video">
+
+<br><br>
+
+<button onclick="generateVideo()">Samee Video</button>
+
+<p id="videoResult"></p>
+
+</div>
+
+<div class="tool">
+
+<h2>🎤 Somali Dubbing</h2>
+
+<textarea id="dubText" placeholder="Qor qoraalka Somali"></textarea>
+
+<br>
+
+<button onclick="speakSomali()">Dubbing Samee</button>
+
+</div>
+
+<script>
+
+function generateVideo(){
+
+let prompt=document.getElementById("videoPrompt").value;
+
+document.getElementById("videoResult").innerHTML=
+"Video waxaa lagu sameynayaa: "+prompt;
+
+}
+
+function speakSomali(){
+
+let text=document.getElementById("dubText").value;
+
+let speech=new SpeechSynthesisUtterance(text);
+
+speech.lang="so-SO";
+
+speech.rate=1;
+
+speech.pitch=1;
+
+speechSynthesis.speak(speech);
+
+}
+
+</script>
+
+</body>
+</html>
